@@ -5,12 +5,12 @@ function dobleIt(num){
     const result = num *2;
     return result;
 } */
-function getInputValue(){
-    const depositInput = document.getElementById('deposit-amount');
-    const newDepositAmount = depositInput.value;
+function getInputValue(inputId){
+    const inputField = document.getElementById(inputId);
+    const inputAmount = inputField.value;
     // clear Input Field
-    depositInput.value = '';
-    return newDepositAmount;
+    inputField.value = '';
+    return inputAmount;
 }
 
 
@@ -24,8 +24,8 @@ document.getElementById('deposit-button').addEventListener('click',function(){
     //get amount from deposit
     /* const depositInput = document.getElementById('deposit-amount');
     const newDepositAmount = depositInput.value; */
-   // console.log(DepositAmount);
-    const newDepositAmount = getInputValue();
+   //next line update after using function
+    const newDepositAmount = getInputValue('deposit-amount');
 
    const depositTotal = document.getElementById('deposit-total');
 
@@ -50,8 +50,10 @@ document.getElementById('deposit-button').addEventListener('click',function(){
 //Handle withdraw button event
 
  document.getElementById('withdraw-button').addEventListener('click', function(){
-    const withdrawInput = document.getElementById('withdraw-amount');
-    const newWithdrawAmount = withdrawInput.value;
+    /* const withdrawInput = document.getElementById('withdraw-amount');
+    const newWithdrawAmount = withdrawInput.value; */
+    //next line update after using function
+    const newWithdrawAmount = getInputValue('withdraw-amount');
 
     const withdrawTotal = document.getElementById('withdraw-total');
 
@@ -68,7 +70,7 @@ document.getElementById('deposit-button').addEventListener('click',function(){
 
    balanceTotal.innerText = newBalance; 
 
-    // clear Input Field
-    withdrawInput.value = '';
+    /* // clear Input Field
+    withdrawInput.value = ''; */
 
 }) 
